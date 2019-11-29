@@ -1,0 +1,2 @@
+# SoseeMapRDOMap
+荒野大镖客线上资源分布图RDOMAP有简体中文
