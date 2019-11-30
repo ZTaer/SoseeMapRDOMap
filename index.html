@@ -1,59 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
+
+  <!-- ------------------------ 默认属性 ------------------------- -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="./favicon.png"/>
 
     <title>Red Dead Online - Interactive Map</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
-    <script src="assets/js/heatmap.min.js"></script>
-    <script src="assets/js/leaflet-heatmap.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <script src="https://unpkg.com/rbush@2.0.2/rbush.js"></script>
-    <script>var module = {};</script>
-    <script src="assets/js/leaflet.canvas-markers.js"></script>
-    <script>module.exports(L);</script>
+
+  <!-- ------------------------ 扩展CSS ------------------------- -->
+  <!--
+    地图
+  -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/leaflet/1.5.1/leaflet.css" />
+
+  <!-- ------------------------ 主CSS ------------------------- -->
     <link rel="stylesheet" href="assets/css/styles.css?nocache=29" />
 
-    <!-- Debug -->
-    <!--
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script>
-    //"-32.6 / 33 / -17.7 / 2"
-      var offsetX = -32.6;
-      var offsetY = 33;
-      var posX = -17.7;
-      var posY = 2;
-
-
-      $(function()
-      {
-        $("#offsetX").slider({min: -100,  max: 100, step: .1, value: offsetX, slide: function( event, ui ) { offsetX = ui.value; MapBase.addGoose(offsetX, posX, offsetY, posY); } });
-        $("#offsetY").slider({min: -100,  max: 100, step: .1, value: offsetY, slide: function( event, ui ) { offsetY = ui.value; MapBase.addGoose(offsetX, posX, offsetY, posY);  } });
-        $("#posX").slider({min: -500,  max: 500, step: .1, value: posX, slide: function( event, ui ) { posX = ui.value; MapBase.addGoose(offsetX, posX, offsetY, posY);  } });
-        $("#posY").slider({min: -500,  max: 500, step: .1, value: posY, slide: function( event, ui ) { posY = ui.value; MapBase.addGoose(offsetX, posX, offsetY, posY);  } });
-      });
-    </script>
-    -->
 </head>
 <body>
-<div class="side-menu">
-<!--
-  <div id="offsetX"></div>
-  <div id="offsetY"></div>
-  <div id="posX"></div>
-  <div id="posY"></div>
--->
 
+<!-- 左边菜单-BGN -->
+<div class="side-menu">
+    <!--
+    <div id="offsetX"></div>
+    <div id="offsetY"></div>
+    <div id="posX"></div>
+    <div id="posY"></div>
+    -->
+
+    <!-- 头部-BGN -->
     <h2><span data-text="menu.markers">Markers</span> <span class="help-button">[Beta]</span></h2>
+    <!-- 头部-END -->
+
+    <!-- 隐藏/显示-BGN -->
     <div class="hide-show-container">
         <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
         <a data-text="menu.show_all" href="javascript:void(0);" onclick="Menu.showAll()">Show all</a>
     </div>
+    <!-- 隐藏/显示-END -->
+
+    <!-- 物品选项-BGN -->
     <div>
         <div class="menu-option clickable" data-type="ambush">
             <img class="icon" src="./assets/images/icons/ambush.png" />
@@ -104,24 +92,30 @@
             <span data-text="menu.rescue">Rescue</span>
         </div>
     </div>
+
     <h2 data-text="menu.animals">Animals</h2>
     <div class="menu-two-column animals" data-type="animals">
     </div>
     <h2 data-text="menu.birds">Birds</h2>
     <div class="menu-two-column birds" data-type="birds">
     </div>
+    <!-- 物品选项-END -->
+
+    <!-- 搜索栏目-BGN -->
     <div class="search-container">
         <h2 data-text="menu.search">Search</h2>
         <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;" autocomplete="off">
     </div>
+    <!-- 搜索栏目-END -->
 
+    <!-- 设置选项-BGN -->
     <div class="settings-container">
         <h2 data-text="menu.settings">Settings</h2>
         <div class="input-container">
             <label for="language" data-text="menu.language">Language</label>
             <select class="input-day" id="language">
-              <option value="en-us" selected>English</option>
-              <option value="zh-s">简体中文</option>
+              <option value="en-us">English</option>
+              <option value="zh-s" selected>简体中文</option>
               <option value="es-es">Español</option>
               <option value="fr-fr">Français</option>
               <option value="pt-br">Português</option>
@@ -136,10 +130,9 @@
             </select>
         </div>
     </div>
-    <div class="issues-container">
-        <h2 data-text="menu.issues">Issues</h2>
-        <a data-text="menu.report_issues" href="https://github.com/jeanropke/RDOMap/issues" target="_blank">Report issues here!</a>
-    </div>
+    <!-- 设置选项-END -->
+
+    <!-- 作者赞助信息-BGN -->
     <div class="hide-show-container">
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
             <input type="hidden" name="cmd" value="_donations" />
@@ -149,10 +142,12 @@
             <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
         </form>
     </div>
-
-
     <br>
+    <!-- 作者赞助信息-END -->
 </div>
+<!-- 左边菜单-END -->
+
+<!-- 地图-BGN -->
 <div class="menu-toggle">></div>
 
 <div id="map"><div class="legend geometry top center hide">
@@ -162,12 +157,66 @@
 </div></div>
 
 <div class="lat-lng-container"><p></p><button id="lat-lng-container-close-button">×</button></div>
+<!-- 地图-END -->
+
+
+<!-- ------------------------ 必备JS-BGN ------------------------- -->
+
+<!--
+    地图必备
+-->
+<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/leaflet/1.5.1/leaflet.js"></script>
+<script src="assets/js/heatmap.min.js"></script>
+<script src="assets/js/leaflet-heatmap.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/rbush@2.0.2/rbush.min.js" integrity="sha256-w9QGA7psqesYlJdHBdN8ZAngHt78nYywAm1duy2c7+s=" crossorigin="anonymous"></script>
+
+<script>var module = {};</script>
+<script src="assets/js/leaflet.canvas-markers.js"></script>
+<script>module.exports(L);</script>
+
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+
+<!-- Debug -->
+<!--
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script>
+//"-32.6 / 33 / -17.7 / 2"
+    var offsetX = -32.6;
+    var offsetY = 33;
+    var posX = -17.7;
+    var posY = 2;
+
+    $(function()
+    {
+    $("#offsetX").slider({min: -100,  max: 100, step: .1, value: offsetX, slide: function( event, ui ) { offsetX = ui.value; MapBase.addGoose(offsetX, posX, offsetY, posY); } });
+    $("#offsetY").slider({min: -100,  max: 100, step: .1, value: offsetY, slide: function( event, ui ) { offsetY = ui.value; MapBase.addGoose(offsetX, posX, offsetY, posY);  } });
+    $("#posX").slider({min: -500,  max: 500, step: .1, value: posX, slide: function( event, ui ) { posX = ui.value; MapBase.addGoose(offsetX, posX, offsetY, posY);  } });
+    $("#posY").slider({min: -500,  max: 500, step: .1, value: posY, slide: function( event, ui ) { posY = ui.value; MapBase.addGoose(offsetX, posX, offsetY, posY);  } });
+    });
+</script>
+-->
+
+<!--
+    主数据
+-->
 <script      src="assets/js/map.js?nocache=29"></script>
 <script  src="assets/js/heatmap.js?nocache=29"></script>
 <script src="assets/js/language.js?nocache=29"></script>
 <script     src="assets/js/menu.js?nocache=29"></script>
+
 <script  src="assets/js/scripts.js?nocache=29"></script>
 
+<!--
+    个人扩展
+--> 
+
+<!-- ------------------------ 必备JS-END ------------------------- -->
+
+<!-- ------------------------ 初始化JS-BGN ------------------------- -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-5"></script>
 <script>
@@ -177,7 +226,7 @@
 
     gtag('config', 'UA-39999584-5');
 </script>
-
+<!-- ------------------------ 初始化JS-END ------------------------- -->
 
 </body>
 </html>

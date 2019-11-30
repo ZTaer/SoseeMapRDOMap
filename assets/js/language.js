@@ -31,7 +31,6 @@ Language.setMenuLanguage = function ()
     $.each($('[data-text]'), function (key, value)
     {
         var temp = $(value);
-
         $(temp).text(Language.get(temp.data('text')));
     });
 
