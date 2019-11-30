@@ -7,7 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="./favicon.png"/>
 
-    <title>Red Dead Online - Interactive Map</title>
+    <title>荒野大镖客线上_动物分布地图_植物分布地图_帮派分布地图_资源分布地图_荒野大镖客2_资源地图中文 | Sosee地图</title>
+        
+    <!--
+        SEO
+    -->
+    <meta name="keywords" content="荒野大镖客线上,荒野大镖客2,动物分布地图,植物分布地图,帮派分布地图,资源分布地图,荒野大镖客地图,荒野大镖客中文站,荒野大镖客攻略,荒野大镖客教程,荒野大镖客收藏家, jeanropke地图, sosee地图, sosee, jeanropke">
+    <meta name="description" content="荒野大镖客线上动植物资源地图,以及帮派藏身处等,活动资源分布地图,方便玩家直接对照地图寻找所需资源在游戏中">
 
   <!-- ------------------------ 扩展CSS ------------------------- -->
   <!--
@@ -15,8 +21,16 @@
   -->
   <link rel="stylesheet" href="https://cdn.staticfile.org/leaflet/1.5.1/leaflet.css" />
 
+  <!--
+    bootstrap
+  -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha256-HAaDW5o2+LelybUhfuk0Zh2Vdk8Y2W2UeKmbaXhalfA=" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+
   <!-- ------------------------ 主CSS ------------------------- -->
-    <link rel="stylesheet" href="assets/css/styles.css?nocache=29" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=29" />
+  <link rel="stylesheet" href="assets/css/exp.css"/>
 
 </head>
 <body>
@@ -31,8 +45,100 @@
     -->
 
     <!-- 头部-BGN -->
-    <h2><span data-text="menu.markers">Markers</span> <span class="help-button">[Beta]</span></h2>
+    <h2>资源地图<span class="help-button">[Beta]</span></h2>
     <!-- 头部-END -->
+
+    <!-- banner-BGN -->
+    <section id="title-banner" class="mt-4 sss" >
+        <div class="container">
+            <div class="row">   
+            <div class="col-12">
+                <h5 class="text-center" >
+                <a href="https://update.leigod.com/soft/channel/LeiGodSetup_ZT.exe">
+                立即下载雷神加速器
+                </a>
+                </h5>
+            </div>
+            </div>
+        </div>
+    </section>
+    <section id="banner" class="carousel sss slide scroll-watch-in-view scroll-watch-ignore" data-ride="carousel" data-scroll-watch="">
+    
+    <div class="carousel-inner">
+        <div class="carousel-item active" style=" background-image:url( ./assets/images/exp/banner2.jpg ) ; ">
+        <a href="https://update.leigod.com/soft/channel/LeiGodSetup_ZT.exe" class="carousel-click"></a>
+        </div>
+
+        <div class="carousel-item" style=" background-image:url( ./assets/images/exp/banner1.png ) ; ">
+        <a href="https://update.leigod.com/soft/channel/LeiGodSetup_ZT.exe" class="carousel-click"></a>
+        </div>
+
+        <div class="carousel-item" style=" background-image:url( ./assets/images/exp/banner3.jpg ) ; " >
+        <a href="https://update.leigod.com/soft/channel/LeiGodSetup_ZT.exe" class="carousel-click" ></a>
+        </div>
+
+    </div>
+
+    <!-- 按钮 -->
+    <a class="carousel-control-prev" href="#banner" data-slide="prev" >
+        <span class="carousel-control-prev-icon" ></span>
+    </a>
+    <a class="carousel-control-next" href="#banner" data-slide="next" >
+        <span class="carousel-control-next-icon"></span>
+    </a>
+
+    </section>
+    <!-- banner-END -->
+
+    <!-- 消息通知-OO7-BGN -->
+    <section id="msg-time" class="py-4">
+    <div class="container">
+        <div class="row">
+        <div class="col-12">
+
+            <dl class="mb-0">
+                <dt>
+                最近更新:
+                </dt>
+                <dd>
+                2019.11.30
+                </dd>
+                <dt>
+                服务赞助:
+                </dt>
+                <dd>
+                    <a href="https://update.leigod.com/soft/channel/LeiGodSetup_ZT.exe" data-toggle="tooltip" data-placement="left" title="立即下载加速器" class="click-link" target="_block"  >
+                    雷神加速器
+                    </a>
+                </dd>
+                <dt>
+                新增站点:
+                </dt>
+                <dd>
+                <a href="https://map.sosee.org/" data-toggle="tooltip" data-placement="left" title="单击访问此站点" class="click-link" target="_block"  >
+                    收藏家地图
+                </a>
+                </dd>
+            </dl>
+
+            <a href="./assets/images/exp/cn.png"  data-toggle="lightbox" data-title="在菜单下方即可看到此选项" data-gallery="img-gallery" data-width="1200" class="more btn d-block mx-auto mt-3">
+                中文翻译
+            </a>
+
+            <a href="./assets/images/exp/msg-qq.jpg"  data-toggle="lightbox" data-title="道友你好! 原作者Github项目由本人负责简体翻译,如发现翻译错误请及时联系 - 如有要紧之事请私信留言 - 回复不能及时请阁下见谅！" data-gallery="img-gallery" data-width="1200" class="more btn d-block mx-auto mt-3">
+                意见反馈
+            </a>
+
+            <button id="toggle-hidden" class="more btn d-block mx-auto mt-3">
+                隐藏广告
+            </button>
+
+        </div>
+        </div>
+    </div>
+    </section>
+    
+    <!-- 消息通知-OO7-END -->
 
     <!-- 隐藏/显示-BGN -->
     <div class="hide-show-container">
@@ -144,6 +250,57 @@
     </div>
     <br>
     <!-- 作者赞助信息-END -->
+
+    
+    <!-- 底部信息-BGN -->
+    <section id="bottom-msg" class="py-5" >
+        <div class="container">
+            
+            <div class="row click-add-money ">
+                <div class="col-12">
+                <h4 class="mt-0" >
+                    为了升级更牛逼的服务器<br/>
+                    请'单击赞助'按钮<br/>
+                </h4>
+                <a href="./assets/images/exp/wechat.png"  data-toggle="lightbox" data-title="感谢您！为服务器做的一份贡献, 我将会更加努力更新维护好此站" data-gallery="img-gallery" data-width="1200" class="btn more mx-auto my-3" >单击赞助</a>
+                </div>  
+            </div>  
+    
+            <div class="row siteMsg">
+                <div class="col-12">
+                <p class="content-text text-center" >
+                    <b>站长声明:</b><br/> 
+                    本项目为Github开源项目<br/>
+                    站长只是方便国内用户快速访问<br/>
+                    广告是为垫付CDN和服务器费用<br/>
+                    如果阁下手头宽裕可以赞助站长<br/>
+                    方便站长更好的维护此站
+                </p>
+                </div>
+            </div>
+            </div>
+    </section>
+    <!-- 底部信息-END -->
+    <!-- end-BGN -->
+    <section id="end" class="py-4">
+    <div class="container">
+        <div class="row">
+        <div class="col-12 text-center">
+
+            <a href="https://github.com/jeanropke/RDOMap" target="_block" class="oo7-link" >
+            技术支持: JEANROPKE原作者
+            </a><br/>
+            <a href="https://github.com/ZTaer" target="_block" class="oo7-link" >
+            技术支持: OO7实验室
+            </a>
+            
+        </div>          
+        </div>
+    </div>
+    </section>
+    <!-- end-END -->
+
+
 </div>
 <!-- 左边菜单-END -->
 
@@ -211,8 +368,16 @@
 <script  src="assets/js/scripts.js?nocache=29"></script>
 
 <!--
-    个人扩展
---> 
+个人扩展
+-->  
+<script src="assets/js/exp.js?nocache=112" ></script>
+
+<!-- 
+bootstrap及框架 
+-->
+<script src="https://cdn.staticfile.org/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.staticfile.org/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha256-Y1rRlwTzT5K5hhCBfAFWABD4cU13QGuRN6P5apfWzVs=" crossorigin="anonymous"></script>
 
 <!-- ------------------------ 必备JS-END ------------------------- -->
 
@@ -225,6 +390,21 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-39999584-5');
+
+    // 灯箱
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+
+    // 提示框
+    $(document).ready( 
+      function(){
+      $('[data-toggle="tooltip"]').tooltip();
+
+      }
+    );
+
 </script>
 <!-- ------------------------ 初始化JS-END ------------------------- -->
 
