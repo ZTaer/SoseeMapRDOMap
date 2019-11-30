@@ -49,11 +49,11 @@ function init()
         if(avaliableLanguages.includes(navigator.language.toLowerCase()))
             Cookies.set('language', navigator.language.toLowerCase());
         else
-            Cookies.set('language', 'en-us');
+            Cookies.set('language', 'zh-s');
     }
 
     if(!avaliableLanguages.includes(Cookies.get('language')))
-        Cookies.set('language', 'en-us');
+        Cookies.set('language', 'zh-s');
 
 
     lang = Cookies.get('language');
