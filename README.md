@@ -13,21 +13,36 @@ Note: This project was created to improve the areas near Asia and China, and to 
 </h4>
 <pre>
     已经更新:
-        0. 更换JS - CDN插件，使亚洲地区可高速访问
-        1. 优化字体显示
-        2. 补充部分字体翻译
-    正在更新:
-        0. 更多的翻译补充
+        0. 中文字体: 
+            a) 文件: language.js / script.js
+            b) 修改: Settings.language = 'zh-s';
+        1. 设定地图图片地址:
+           a) 使用本地地图图片( 切忌不要使用默认的cdn图片链接 )
+           var mapLayers = [
+                L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', {
+                    noWrap: true,
+                    bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
+                }),
+                L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', {
+                    noWrap: true,
+                    bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
+                }),
+                L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', {
+                    noWrap: true,
+                    bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
+                })
+            ];
+       
 </pre>
 <pre>
     Already updated:
-         0. Replaced JS-CDN plug-in to enable high-speed access in Asia
+         1. Replaced JS-CDN plug-in to enable high-speed access in Asia
          Optimized font display
-         2. Supplement some font translation
+         1. Supplement some font translation
      Updating:
-         0. More translations added
+         1. More translations added
      Ready to update:
-         0. Click the icon to display the image of the item's location in the game
+         1. Click the icon to display the image of the item's location in the game
 </pre>
 
 <hr/>
